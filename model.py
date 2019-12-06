@@ -60,9 +60,9 @@ weights={'wf1':tf.Variable(tf.random.truncated_normal([7*7*512,512],stddev=0.04)
          'wf2':tf.Variable(tf.random.truncated_normal([512,1024],stddev=0.04))/16,\
          'out':tf.Variable(tf.random.truncated_normal([1024,2],stddev=0.04))/np.sqrt(512)}
 
-biases={'bf1':tf.zeros([512]),\
-        'bf2':tf.zeros([1024]),\
-        'out':tf.zeros([2])}
+biases={'bf1':tf.Variable(tf.zeros([512])),\
+        'bf2':tf.Variable(tf.zeros([1024])),\
+        'out':tf.Variable(tf.zeros([2]))}
 
 x = tf.placeholder(tf.float32,[None,224,224,3])
 y = tf.placeholder(tf.float32,[None,2])
