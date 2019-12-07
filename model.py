@@ -57,8 +57,8 @@ def Tail(x,weights,biases):
     return out
 
 weights={'wf1':tf.Variable(tf.random.truncated_normal([7*7*512,512],stddev=0.04)),\
-         'wf2':tf.Variable(tf.random.truncated_normal([512,1024],stddev=0.04))/16,\
-         'out':tf.Variable(tf.random.truncated_normal([1024,2],stddev=0.04))/np.sqrt(512)}
+         'wf2':tf.Variable(tf.random.truncated_normal([512,1024],stddev=0.04)/16),\
+         'out':tf.Variable(tf.random.truncated_normal([1024,2],stddev=0.04)/np.sqrt(512))}
 
 biases={'bf1':tf.Variable(tf.zeros([512])),\
         'bf2':tf.Variable(tf.zeros([1024])),\
